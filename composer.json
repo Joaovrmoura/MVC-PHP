@@ -1,0 +1,17 @@
+{
+    "name": "joaov/projeto-oop",
+    "authors": [
+        {
+            "name": "joaovrmoura",
+            "email": "joaovrmoura4@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "app\\":"app"
+        }, 
+        "files":[
+        ]
+    }
+}
