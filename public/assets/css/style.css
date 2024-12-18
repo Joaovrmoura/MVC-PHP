@@ -1,0 +1,214 @@
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --background-light: #f4f7f6;
+    --text-dark: #2c3e50;
+    --sidebar-width: 250px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: var(--background-light);
+    color: var(--text-dark);
+}
+
+.dashboard {
+    display: flex;
+    height: 100vh;
+}
+
+/* Sidebar Styles (Same as previous design) */
+.sidebar {
+    width: var(--sidebar-width);
+    background-color: white;
+    box-shadow: 5px 0 25px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.sidebar-logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ecf0f1;
+}
+
+.sidebar-logo img {
+    width: 40px;
+    margin-right: 10px;
+}
+
+.sidebar-logo h2 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+}
+
+.sidebar-menu {
+    list-style: none;
+}
+
+.sidebar-menu li {
+    margin-bottom: 10px;
+}
+
+.sidebar-menu a {
+    text-decoration: none;
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.sidebar-menu a:hover, .sidebar-menu a.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.sidebar-menu a i {
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+/* Main Content */
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+/* Post Creation Section */
+.post-creation {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.post-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.post-form input, 
+.post-form textarea {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+}
+
+.file-upload {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.file-upload input[type=file] {
+    font-size: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
+
+.file-upload-btn {
+    border: none;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.image-preview {
+    max-width: 200px;
+    max-height: 200px;
+    margin-bottom: 15px;
+}
+
+.submit-btn {
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #27ae60;
+}
+
+/* Posts Display Section */
+.posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.post-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.post-card:hover {
+    transform: scale(1.05);
+}
+
+.post-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.post-card-content {
+    padding: 15px;
+}
+
+.post-card-content h3 {
+    margin-bottom: 10px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 80px;
+        overflow: hidden;
+    }
+
+    .sidebar-logo h2 {
+        display: none;
+    }
+
+    .sidebar-menu a span {
+        display: none;
+    }
+
+    .posts-grid {
+        grid-template-columns: 1fr;
+    }
+}
