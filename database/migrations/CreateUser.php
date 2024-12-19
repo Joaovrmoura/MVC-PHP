@@ -2,7 +2,7 @@
 
 class CreateUserTable
 {
-    public static function creatUserTable($pdo){
+    public static function createUserTable($pdo){
         
         try{
             $query = "CREATE TABLE IF NOT EXISTS users(

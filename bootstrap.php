@@ -1,14 +1,16 @@
 <?php
 
-$config = require "config.php";
-require "database/Connection.php";
-require "database/migrations/CreateUser.php";
-require "database/migrations/CreatePostsTable.php";
+App::bind("config", require "config.php");
 
-$pdo = connection::make($config['database']);
+$pdo = Connection::make(
+    App::get('config')['database']
+);
 
-
-CreateUserTable::creatUserTable($pdo);
+// métodos staticos das classes dentro de migrations
+// são carregadas no autoload do composer dentro do 
+// index.php da pasta raiz
+CreateUserTable::createUserTable($pdo);
 CreatePostsTable::createPostsTable($pdo);
 
-
+require Router::load("routes.php")
+    ->show(Request::uri());

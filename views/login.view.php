@@ -1,99 +1,33 @@
 <?php require __DIR__.'/partials/_header.php'; ?>
-<div class="dashboard">
-        <!-- Sidebar (Same as previous design) -->
-        <aside class="sidebar">
-            <div class="sidebar-logo">
-                <img src="/api/placeholder/40/40" alt="Logo">
-                <h2>Dashboard</h2>
-            </div>
 
-            <ul class="sidebar-menu">
-                <li>
-                    <a href="#">
-                        <i class="fas fa-home"></i>
-                        <span>Início</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fas fa-blog"></i>
-                        <span>Posts</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="" class="active">
-                        <i class="fas fa-users"></i>
-                        <span>Login</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fas fa-cog"></i>
-                        <span>Configurações</span>
-                    </a>
-                </li>
-            </ul>
-        </aside>
-        
-        <!-- Main Content -->
-        <main class="main-content">
-            <header class="dashboard-header">
-                <h1>Criar Novo Post</h1>
-                <div>
-                    <i class="fas fa-bell"></i>
-                    <i class="fas fa-user"></i>
-                </div>
-            </header>
+            <!-- Main Content -->
+            <main class="col-md-9 col-lg-10 px-md-4">
+                <header class="dashboard-header py-3 d-flex justify-content-between align-items-center">
+                    <h1 class="h3">Login</h1>
+                    <div>
+                        <i class="fas fa-bell me-3"></i>
+                        <i class="fas fa-user"></i>
+                    </div>
+                </header>
 
-            <!-- Post Creation Section -->
-            <section class="post-creation">
-                <form class="post-form" id="postForm">
-                    <input type="text" placeholder="Título do Post" required>
-                    <textarea placeholder="Descrição do Post" rows="4" required></textarea>
-                    
-                    <div class="file-upload">
-                        <button type="button" class="file-upload-btn">
-                            <i class="fas fa-upload"></i> Escolher Imagem
+                <section class="my-4">
+                    <form class="p-3 bg-white shadow-sm rounded">
+                        <div class="mb-3">
+                            <label for="email">Email</label>
+                            <input type="text" class="form-control" name="email" placeholder="Email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="senha">Senha</label>
+                            <input type="text" class="form-control" name="password" placeholder="Senha" required>
+                        </div>    
+                        <button type="submit" class="btn btn-success">
+                            <i class="fas fa-paper-plane"></i>Login
                         </button>
-                        <input type="file" accept="image/*" id="imageUpload">
-                    </div>
-
-                    <img id="imagePreview" class="image-preview" style="display:none;">
-
-                    <button type="submit" class="submit-btn">
-                        <i class="fas fa-paper-plane"></i> Publicar Post
-                    </button>
-                </form>
-            </section>
-
-            <!-- Posts Display Section -->
-            <section class="posts-grid">
-                <!-- Sample Post Cards -->
-                <div class="post-card">
-                    <img src="/api/placeholder/300/250" alt="Post Image">
-                    <div class="post-card-content">
-                        <h3>Primeiro Post</h3>
-                        <p>Uma breve descrição do primeiro post criado no dashboard.</p>
-                    </div>
-                </div>
-
-                <div class="post-card">
-                    <img src="/api/placeholder/300/250" alt="Post Image">
-                    <div class="post-card-content">
-                        <h3>Segundo Post</h3>
-                        <p>Descrição interessante para o segundo post do dashboard.</p>
-                    </div>
-                </div>
-
-                <div class="post-card">
-                    <img src="/api/placeholder/300/250" alt="Post Image">
-                    <div class="post-card-content">
-                        <h3>Terceiro Post</h3>
-                        <p>Mais um post para demonstrar o layout do dashboard.</p>
-                    </div>
-                </div>
-            </section>
-        </main>
+                    </form>
+                </section>
+            </main>
+        </div>
     </div>
 
-<?php require __DIR__.'/partials/_footer.php'; ?>
+    <!-- JS do Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
