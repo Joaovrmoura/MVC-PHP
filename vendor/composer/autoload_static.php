@@ -6,17 +6,22 @@ namespace Composer\Autoload;
 
 class ComposerStaticInitd751713988987e9331980363e24189ce
 {
+    public static $files = array (
+        'e320f53bb3364b7ed572ecc5ef33c5cf' => __DIR__ . '/../..' . '/app/helpers.php',
+    );
+
     public static $classMap = array (
-        'App' => __DIR__ . '/../..' . '/App.php',
+        'App\\App' => __DIR__ . '/../..' . '/app/App.php',
+        'App\\Controllers\\DashboardController' => __DIR__ . '/../..' . '/app/controllers/DashboardController.php',
+        'App\\Request' => __DIR__ . '/../..' . '/app/Request.php',
+        'App\\Router' => __DIR__ . '/../..' . '/app/Router.php',
         'ComposerAutoloaderInitd751713988987e9331980363e24189ce' => __DIR__ . '/..' . '/composer/autoload_real.php',
         'Composer\\Autoload\\ClassLoader' => __DIR__ . '/..' . '/composer/ClassLoader.php',
         'Composer\\Autoload\\ComposerStaticInitd751713988987e9331980363e24189ce' => __DIR__ . '/..' . '/composer/autoload_static.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
-        'Connection' => __DIR__ . '/../..' . '/database/Connection.php',
         'CreatePostsTable' => __DIR__ . '/../..' . '/database/migrations/CreatePostsTable.php',
         'CreateUserTable' => __DIR__ . '/../..' . '/database/migrations/CreateUser.php',
-        'Request' => __DIR__ . '/../..' . '/Request.php',
-        'Router' => __DIR__ . '/../..' . '/Router.php',
+        'database\\Connection' => __DIR__ . '/../..' . '/database/Connection.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

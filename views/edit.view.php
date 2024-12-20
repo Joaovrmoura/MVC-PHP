@@ -28,6 +28,9 @@
                         <button type="submit" class="btn btn-success">
                             <i class="fas fa-paper-plane"></i> Publicar Post
                         </button>
+                        <button type="submit" class="btn btn-danger">
+                            <i class="fas fa-paper-plane"></i><a href="delete">Delete Post</a> 
+                        </button>
                     </form>
                 </section>
             </main>

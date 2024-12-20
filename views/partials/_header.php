@@ -43,22 +43,22 @@
                 <h5 class="text-primary fw-bold mb-4">Dashboard</h5>
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a class="nav-link active" href="views/index.view.php">
-                           Início
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="views/create.view.php">
+                        <a class="nav-link" href="create">
                           Criar Post
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="views/edit.view.php">
+                        <a class="nav-link" href="posts">
+                          Posts
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="edit">
                             Editar Post
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="views/login.view.php">
+                        <a class="nav-link" href="login">
                            Login
                         </a>
                     </li>
