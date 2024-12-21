@@ -12,25 +12,32 @@
 
                 <!-- Post Creation Section -->
                 <section class="my-4">
-                    <form class="p-3 bg-white shadow-sm rounded">
+                    <form id="postForm" class="p-3 bg-white shadow-sm rounded" method="post" action="store" enctype="multipart/form-data">
                         <div class="mb-3">
-                            <input type="text" class="form-control" placeholder="Título do Post" required>
+                            <input type="text" class="form-control" name="title" placeholder="Título do Post" required>
                         </div>
                         <div class="mb-3">
-                            <textarea class="form-control" placeholder="Descrição do Post" rows="4" required></textarea>
+                            <textarea class="form-control" name="thumbnail" placeholder="Descrição do Post" rows="4" required></textarea>
                         </div>
                         <div class="mb-3 d-flex align-items-center">
                             <button type="button" class="btn btn-primary me-2">
                                 <i class="fas fa-upload"></i> Escolher Imagem
                             </button>
-                            <input type="file" class="form-control" style="max-width: 200px;">
+                            <input type="file" name="img" class="form-control"  id="image" style="max-width: 200px;">
                         </div>
                         <button type="submit" class="btn btn-success">
                             <i class="fas fa-paper-plane"></i> Publicar Post
                         </button>
                     </form>
                 </section>
-
+                <?php if(isset($_SESSION['success'])) : ?>
+                    <h1 id="result" class="hidden">
+                        <?= 
+                            $_SESSION['success']; 
+                            unset($_SESSION['success']);
+                        ?>
+                    </h1>
+                <?php endif; ?>   
                 <!-- Posts Display Section -->
                 <section class="row">
                     <!-- Card 1 -->
@@ -69,4 +76,5 @@
     </div>
 
     <!-- JS do Bootstrap -->
+     <!-- <script src="./public/js/ajax.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

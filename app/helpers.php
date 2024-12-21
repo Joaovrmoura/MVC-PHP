@@ -5,9 +5,9 @@ use database\Connection;
 
 if(!function_exists('dd')){
     function dd($data){
-        echo "<pre>";
+        echo'<pre>';
             die(var_dump($data));
-        echo "</pre>";
+        echo'</pre>';
     }
 }
 

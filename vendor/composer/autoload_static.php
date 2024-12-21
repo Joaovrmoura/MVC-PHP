@@ -13,6 +13,8 @@ class ComposerStaticInitd751713988987e9331980363e24189ce
     public static $classMap = array (
         'App\\App' => __DIR__ . '/../..' . '/app/App.php',
         'App\\Controllers\\DashboardController' => __DIR__ . '/../..' . '/app/controllers/DashboardController.php',
+        'App\\Controllers\\PostsController' => __DIR__ . '/../..' . '/app/controllers/PostsController.php',
+        'App\\Models\\Post' => __DIR__ . '/../..' . '/app/models/Post.php',
         'App\\Request' => __DIR__ . '/../..' . '/app/Request.php',
         'App\\Router' => __DIR__ . '/../..' . '/app/Router.php',
         'ComposerAutoloaderInitd751713988987e9331980363e24189ce' => __DIR__ . '/..' . '/composer/autoload_real.php',

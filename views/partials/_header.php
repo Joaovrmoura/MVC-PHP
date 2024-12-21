@@ -1,3 +1,7 @@
+<?php
+session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -63,7 +67,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="views/register.view.php">
+                        <a class="nav-link" href="register">
                             Cadastro
                         </a>
                     </li>

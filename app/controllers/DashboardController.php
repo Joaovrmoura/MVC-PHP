@@ -27,4 +27,5 @@ class DashboardController{
     public function register(){
         return view("register");
     }
+    
 }
