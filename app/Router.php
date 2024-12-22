@@ -1,7 +1,8 @@
 <?php
 
 namespace App;
-
+use Exception;
+// classe usada em routes
 class Router
 { 
     // armazena os métodos 
@@ -10,15 +11,10 @@ class Router
         'GET' => [],
         'POST' => []
     ];
-
-    // Define uma rota
-    // public function define($routes)
-    // {
-    //     $this->routes = $routes;
-    // }
-
+    
+     // associa a uri ao método de requisição, através de um array associativo,
+     // os valores vêm de routes EX: uri = 'posts', $controller = Postcontroller@posts;
     public function get($uri, $controller){
-        // associa o método de requisição ao valor do array
         $this->routes['GET'][$uri]=$controller;
     }
     public function post($uri, $controller){
@@ -31,12 +27,15 @@ class Router
         require $file;
         return $router;
     }
+
+    // verifica se o método de requisição está associado a rota correta
     public function show($uri, $method)
     {    
-        //retorna o nome diretório raiz
+        // retorna o nome diretório raiz
         // por isso coloco em lowercase
         $uri = strtolower($uri);
-        // se o array uri existe dentrodo array routes
+
+        // verifica se a uri(rota) está no método de requisção(GET, POST) correto
         if(array_key_exists($uri, $this->routes[$method])){
             // separa o método do controlador e o retorna
             // destribuido com o ...rest
@@ -44,13 +43,12 @@ class Router
             explode('@', 
             $this->routes[$method][$uri])
             );
-            // return $this->routes[$method][$uri];
         }
-        echo 'Rota não encontrada!';
+        throw new Exception("Rota não encontrada para o método {$method}: {$uri}");
     }
 
     public function callMethod($controller, $action){
-        // aqui retorm o método e o controlador
+        // aqui retorna o método e o controlador
         // controller é a classe dentro de routes e
         // o index é o método da classe
         $link = "App\\Controllers\\{$controller}";

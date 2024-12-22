@@ -12,35 +12,34 @@
                 
                 <!-- Posts Display Section -->
                 <section class="row">
+           
                     <!-- Card 1 -->
-                    <div class="col-md-4 mb-4">
-                        <div class="card shadow-sm">
-                            <img src="https://via.placeholder.com/300x200" alt="Post Image" class="card-img-top">
-                            <div class="card-body">
-                                <h5 class="card-title">Primeiro Post</h5>
-                                <p class="card-text">Uma breve descrição do primeiro post criado no dashboard.</p>
+                    <?php foreach($posts as $post) : ?>
+                        <div class="col-md-4 mb-4">
+                            <div class="card shadow-sm">
+                                <img src="http://localhost/projeto-OOP/public/assets/<?= $post->thumbnail ?>" alt="Post Image" class="card-img-top">
+                                <div class="card-body">
+                                    <h5 class="card-title"><?= $post->title ?></h5>
+                                    <p class="card-text"><?= $post->description ?></p>
+                                <div class="mb-3 d-flex align-items-center">
+                                <form action="show" method="GET">
+                                    <input type="hidden"  value="<?= $post->id ?>" name="id">
+                                    <button type="submit" class="btn btn-primary me-2">Ver mais</button>
+                                </form>
+                                <form action="edit" method="GET">
+                                    <input type="hidden"  value="<?= $post->id ?>" name="id">
+                                    <button type="submit" class="btn btn-warning me-2">Editar Post</button>
+                                </form>
+                                <form action="delete" method="POST">
+                                    <input type="hidden"  value="<?= $post->id ?>" name="id">
+                                    <button type="submit" class="btn btn-danger">Deletar</button>
+                                </form>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <?php endforeach ?>
                     <!-- Card 2 -->
-                    <div class="col-md-4 mb-4">
-                        <div class="card shadow-sm">
-                            <img src="https://via.placeholder.com/300x200" alt="Post Image" class="card-img-top">
-                            <div class="card-body">
-                                <h5 class="card-title">Segundo Post</h5>
-                                <p class="card-text">Descrição interessante para o segundo post do dashboard.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Card 3 -->
-                    <div class="col-md-4 mb-4">
-                        <div class="card shadow-sm">
-                            <img src="https://via.placeholder.com/300x200" alt="Post Image" class="card-img-top">
-                            <div class="card-body">
-                                <h5 class="card-title">Terceiro Post</h5>
-                                <p class="card-text">Mais um post para demonstrar o layout do dashboard.</p>
-                            </div>
-                        </div>
                     </div>
                 </section>
             </main>
@@ -49,3 +48,4 @@
 
     <!-- JS do Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <?php require __DIR__.'../partials/_footer.php'; ?>

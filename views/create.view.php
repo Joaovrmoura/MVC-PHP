@@ -17,8 +17,11 @@
                             <input type="text" class="form-control" name="title" placeholder="Título do Post" required>
                         </div>
                         <div class="mb-3">
-                            <textarea class="form-control" name="thumbnail" placeholder="Descrição do Post" rows="4" required></textarea>
+                            <textarea class="form-control" name="description" placeholder="Descrição do Post" rows="4" required></textarea>
                         </div>
+                        <!-- <div class="mb-3">
+                            <input type="text" class="form-control" name="thumbnail" placeholder="Descrição do Post" required>
+                        </div> -->
                         <div class="mb-3 d-flex align-items-center">
                             <button type="button" class="btn btn-primary me-2">
                                 <i class="fas fa-upload"></i> Escolher Imagem
@@ -30,14 +33,7 @@
                         </button>
                     </form>
                 </section>
-                <?php if(isset($_SESSION['success'])) : ?>
-                    <h1 id="result" class="hidden">
-                        <?= 
-                            $_SESSION['success']; 
-                            unset($_SESSION['success']);
-                        ?>
-                    </h1>
-                <?php endif; ?>   
+    
                 <!-- Posts Display Section -->
                 <section class="row">
                     <!-- Card 1 -->
@@ -78,3 +74,4 @@
     <!-- JS do Bootstrap -->
      <!-- <script src="./public/js/ajax.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <?php require __DIR__.'../partials/_footer.php'; ?>

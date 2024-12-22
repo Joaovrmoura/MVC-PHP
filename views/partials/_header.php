@@ -4,6 +4,7 @@ session_start();
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,27 +16,55 @@ session_start();
         body {
             background-color: #f8f9fa;
         }
+
         .sidebar {
             min-height: 100vh;
             background-color: #ffffff;
             border-right: 1px solid #dee2e6;
         }
+
         .sidebar .nav-link {
             color: #333;
             font-weight: 500;
         }
+
         .sidebar .nav-link:hover {
             background-color: #e9ecef;
         }
+
         .dashboard-header {
             border-bottom: 1px solid #dee2e6;
         }
+
         .post-card img {
             width: 100%;
             height: auto;
         }
+
+        #result {
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #28a745;
+            /* Cor de fundo verde para sucesso */
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 4px;
+            z-index: 1000;
+            display: none;
+            /* Inicialmente escondido */
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .hidden {
+            display: none;
+            /* Classe para esconder a mensagem após exibir */
+        }
     </style>
 </head>
+
 <body>
     <div class="container-fluid">
         <div class="row">
@@ -48,22 +77,17 @@ session_start();
                 <ul class="nav flex-column">
                     <li class="nav-item">
                         <a class="nav-link" href="create">
-                          Criar Post
+                            Criar Post
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="posts">
-                          Posts
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="edit">
-                            Editar Post
+                            Posts
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="login">
-                           Login
+                            Login
                         </a>
                     </li>
                     <li class="nav-item">
