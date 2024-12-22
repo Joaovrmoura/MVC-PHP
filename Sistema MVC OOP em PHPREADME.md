@@ -5,20 +5,27 @@ Estrutura do Projeto
 Diretórios e Arquivos:
 app/
 
-controllers/: Contém as classes responsáveis por gerenciar a lógica do sistema.
-models/: Contém as classes que manipulam os dados e interagem com o banco.
-views/partials/: Contém partes reutilizáveis da interface, como cabeçalhos e rodapés.
+controllers/: Contém as classes responsáveis por gerenciar a 
+lógica do sistema.
+models/: Contém as classes que manipulam os dados e interagem 
+com o banco.
+views/partials/: Contém partes reutilizáveis da interface, como 
+cabeçalhos e rodapés.
 
-database/migrations/: Scripts responsáveis por alterações estruturais no banco de dados.
+database/migrations/: Scripts responsáveis por alterações 
+estruturais no banco de dados.
 
-public/assets/css/: Diretório para arquivos estáticos acessíveis pelo navegador, como CSS e JavaScript.
+public/assets/css/: Diretório para arquivos estáticos acessíveis 
+pelo navegador, como CSS e JavaScript.
 
-vendor/: Diretório gerenciado pelo Composer que contém dependências externas.
+vendor/: Diretório gerenciado pelo Composer que contém 
+dependências externas.
 
 Arquivos importantes:
 
 .htaccess: Configuração de URL amigável.
-composer.json e composer.lock: Configuração e controle de dependências.
+composer.json e composer.lock: Configuração e controle 
+de dependências.
 index.php: Ponto de entrada da aplicação.
 config.php: Configurações globais do projeto.
 bootstrap.php: Inicialização da aplicação.
@@ -48,7 +55,8 @@ include 'views/partials/header.php';
 include 'views/partials/footer.php';
 
 3. Controllers
-Responsáveis por gerenciar a lógica da aplicação e conectar modelos às views.
+Responsáveis por gerenciar a lógica da aplicação e
+conectar modelos às views.
 Exemplo:
 php
 class PostController {
@@ -57,7 +65,7 @@ class PostController {
         include 'views/post/show.php';
     }
 }
-4. Database/Migrations
+5. Database/Migrations
 Scripts que versionam mudanças no banco de dados.
 Exemplo de migração:
 php
@@ -84,7 +92,8 @@ RewriteRule ^([a-zA-Z0-9-]+)$ index.php?page=$1 [QSA,L]
 O arquivo routes.php define as rotas do sistema.
 Classes envolvidas:
 Request.php: Processa e sanitiza a URL.
-Router.php: Compara a URL tratada com as rotas definidas e carrega o controlador.
+Router.php: Compara a URL tratada com as rotas definidas
+e carrega o controlador.
 Exemplo de Configuração
 config.php
 Contém configurações como credenciais do banco de dados.
@@ -114,4 +123,5 @@ Sempre execute composer dump-autoload ao adicionar novas classes.
 Use migrations para mudanças controladas no banco de dados.
 Certifique-se de configurar corretamente o .htaccess para URLs amigáveis.
 Licença
-Este projeto é apenas para fins de estudo. Sinta-se à vontade para explorar, modificar e aprender!
+Este projeto é apenas para fins de estudo.
+Sinta-se à vontade para explorar, modificar e aprender!
