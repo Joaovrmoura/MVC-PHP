@@ -39,7 +39,7 @@ class Post
     // guarda imagens
     public static function storePost($imgUrl, $data)
     {
-        // imgUrl é o nome da imagem, atribuido a thumbnail
+        // imgUrl é o nome da imagem, atribuido ao nome thumbnail
         // $data['thumbnail'] = $imgUrl;
         $thumbnail = explode(
             "/",
@@ -62,19 +62,17 @@ class Post
         }
     }
 
-    // deleta posts basedo no id
+    // update de posts
     public function edit($id, $table, $data)
     {
         try {
             $pdo = connect();
-            $stmt = $pdo->prepare("UPDATE {$table} SET :title=? AND :description=? AND :thmbnail=? WHERE id=?");
-            $stmt->execute([
+            $stmt = $pdo->prepare("UPDATE {$table} SET title = :title, description = :description WHERE id= :id");
+            return $stmt->execute([
                 ':title'=> $data['title'],
                 ':description' => $data['description'],
-                ':thumbnail' => $data['thumbnail'],
                 ':id' => $id
             ]);
-            return true;
         } catch (Exception $e) {
             die($e->getMessage());
         }

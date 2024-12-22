@@ -2,12 +2,12 @@
 
 namespace App;
 
-// uso para preencher os paâmetros da aplicação
+// uso para preencher os parâmetros da aplicação
 // com as requisições corretas
 class Request{
     public static function uri(){
 
-        // pega o nome da url, depois do nome do diretório raizo
+        // pega o nome da url, depois do nome do diretório raíz
         $uri = trim(
             parse_url(
             $_SERVER['REQUEST_URI'], 
@@ -20,11 +20,11 @@ class Request{
             $uri
         );
     
-        //  retorna a ultima string como a url parâmetro para routes
+        //  retorna a última string como url parâmetro para routes
         return end($last);
     }
     // métodos de requisição(utilizados na classe PostController)
-    // para receber os falores vindo por diferentes métodos
+    // retorna os dados dos diferentes tipos de requisição
     public static function method(){
         return $_SERVER['REQUEST_METHOD'];
     }

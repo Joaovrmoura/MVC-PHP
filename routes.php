@@ -17,7 +17,9 @@ $router->get('posts', 'PostsController@index');
 $router->post('store', 'PostsController@store');
 $router->get('show', 'PostsController@show');
 $router->post('delete', 'PostsController@destroy');
-$router->get('edit', 'PostsController@editPost');
+$router->get('edit', 'PostsController@editView');
+
+$router->get('update', 'PostsController@editPost');
 
 $router->get('login', 'DashboardController@login');
 $router->get('register', 'DashboardController@register');

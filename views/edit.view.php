@@ -12,17 +12,15 @@
                
                 <!-- Post Creation Section -->
                 <section class="my-4">
-                    <form id="postForm" class="p-3 bg-white shadow-sm rounded" method="post" action="edit" enctype="multipart/form-data">
+                    <form id="postForm" class="p-3 bg-white shadow-sm rounded" method="get" action="update" enctype="multipart/form-data">
                     <?php if($post) : ?>
                         <div class="mb-3">
                             <input type="text" class="form-control" name="title" value="<?= $post->title ?>" placeholder="Título do Post" required>
+                            <input type="hidden" name="id" value="<?= $post->id ?>">
                         </div>
                         <div class="mb-3">
                             <textarea class="form-control" name="description" placeholder="Descrição do Post" rows="4" required><?= $post->description ?></textarea>
                         </div>
-                        <!-- <div class="mb-3">
-                            <input type="text" class="form-control" name="thumbnail" placeholder="Descrição do Post" required>
-                        </div> -->
                         <div class="mb-3 d-flex align-items-center">
                             <button type="button" class="btn btn-primary me-2">
                                 <i class="fas fa-upload"></i> Escolher Imagem

@@ -35,10 +35,15 @@ class PostsController{
         return view("show", ['post' => $post]);
     }
     public function editPost(){
-        $post = (new Post)->edit($_GET['id'], 'posts',  Request::values());
+        $data = Request::values();
+        $post = (new Post)->edit($data['id'], 'posts',  $data);
         startSession();
         setSession('success', 'Update com sucesso!');
         redirect('posts');
+    }
+    public function editView(){
+        $post = (new Post)->showPost('posts', Request::values()['id']);
+        return view("edit", ['post' => $post]);
     }
     public function destroy(){
         $post = (new Post)->deletePost(Request::values()['id']);
