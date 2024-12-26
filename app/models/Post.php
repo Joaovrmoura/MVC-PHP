@@ -41,26 +41,27 @@ class Post
     {
         // imgUrl é o nome da imagem, atribuido ao nome thumbnail
         // $data['thumbnail'] = $imgUrl;
-        $thumbnail = explode(
-            "/",
-            $imgUrl
-        );
+        $thumbnail = explode("/",$imgUrl);
         $thumbnail = end($thumbnail);
-
+        
         try {
             $pdo = connect();
-            $query = " posts (title, description, thumbnail) 
+
+            $query = "INSERT INTO posts (title, description, thumbnail) 
             VALUES (:title, :description, :thumbnail)";
+
             $stmt = $pdo->prepare($query);
             $stmt->execute([
                 ':title' => $data['title'],
                 ':description' => $data['description'],
                 ':thumbnail' => $thumbnail
             ]);
+            
         } catch (Exception $e) {
             echo "erro" . $e->getMessage();
         }
     }
+    
 
     // update de posts
     public function edit($id, $table, $data)

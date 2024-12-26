@@ -3,7 +3,6 @@
 //para lidar com o bug da rota vazia
 $baseName = basename(__DIR__);
 
-
 // @ separa o método da classe da classe em si
 // acesso o index
 $router->get( strtolower($baseName),'DashboardController@index');

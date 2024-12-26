@@ -20,7 +20,7 @@ class PostsController{
         $img = Request::file()['img'];
         $filepath = $img['tmp_name'];
         $imgName = strtolower(str_replace(' ','-',$img['name']));
-        $imgUrl = '../projeto-OOP/public/assets/thumbnails' . $imgName;
+        $imgUrl = '../projeto-OOP/public/assets/thumbnails/' . $imgName;
         (new Post)->storePost($imgUrl, Request::values());
         if(move_uploaded_file($filepath, $imgUrl)){
             startSession();
@@ -28,6 +28,7 @@ class PostsController{
             redirect('create');
         }
     }
+    
     // o nome dos métodos são passados para as routes.php
     // para separar o método da classe
     public function show(){

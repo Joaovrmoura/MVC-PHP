@@ -24,11 +24,6 @@
                     </div>
                 </div>
             </div>
-        <?php else : ?>
-            <!-- Exibe mensagem se não houver post -->
-            <div class="col-12">
-                <p class="text-center">Nenhum post encontrado!</p>
-            </div>
         <?php endif; ?>
     </section>
 
